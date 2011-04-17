@@ -82,6 +82,7 @@ def main():
         write(header_row)
 
     # Featuring string regex (f. ft. feat. feat with and featuring)
+    #                     or [f. ft. feat. feat with and featuring]
     # TODO this does not take care of this case:
     #      Song name (Featuring Artist) (remix)
     #
@@ -91,7 +92,7 @@ def main():
         # same as the base, but added 'With'
         # This is a common word and can be conflicting
         feat = re.compile(
-            r"(\((?:ft?\.|with|featuring|feat(?:[\.]|))(.*)\))", re.I)
+            r"([\[(](?:ft?\.|with|featuring|feat(?:[\.]|))(.*)[\])])", re.I)
     elif no_parens:
         # this takes care of featuring that do not have parenthesis
         # CAVEAT: this won't do 'featuring' since that's a common word
@@ -100,7 +101,7 @@ def main():
         feat = re.compile(r"([^(]f(?:ea)?t?\.(.+))", re.I)
     else:
         feat = re.compile(
-            r"(\((?:ft?\.|featuring|feat(?:[\.]|))(.*)\))", re.I)
+            r"([\[(](?:ft?\.|featuring|feat(?:[\.]|))(.*)[\])])", re.I)
 
     it = app('iTunes')
     current_selection = it.selection()
