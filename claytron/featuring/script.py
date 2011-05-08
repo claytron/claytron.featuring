@@ -30,7 +30,13 @@ from appscript import app
 def main():
     """move (featuring Rahzel) info out of track/artist names
     """
-    parser = OptionParser()
+    version = "1.0"
+    description = """\
+This script will allow you to modify the tracks in your iTunes database.
+Select the items that you want to modify in iTunes, then run this
+script from the command line using the options below.
+"""
+    parser = OptionParser(version=version, description=description)
     # always default to a 'dry run'
     parser.add_option(
         "-r", "--real-run",
@@ -50,7 +56,10 @@ def main():
     parser.add_option(
         "-n", "--no-parens",
         dest="no_parens", action="store_true",
-        help="Process the tracks without parenthesis",
+        help="""\
+Process the tracks without parenthesis (be CAREFUL with this option,
+since "featuring" is a common word)
+""",
         default=False)
     (options, args) = parser.parse_args()
 
