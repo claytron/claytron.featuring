@@ -7,6 +7,13 @@ and track names. This script helps you normalize and move those pesky
 allows you to make a selection in iTunes, then run the script against
 those tracks from the command line.
 
+Code Repository
+  https://github.com/claytron/claytron.featuring
+PyPi
+  http://pypi.python.org/pypi/claytron.featuring/
+Issues
+  https://github.com/claytron/claytron.featuring/issues
+
 Installation
 ------------
 
