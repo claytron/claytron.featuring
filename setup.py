@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.0.1'
 
 setup(
     name='claytron.featuring',
     version=version,
-    description="A console script to clean an iTunes library",
+    description=(
+        "A console script to clean an iTunes library of featuring strings"),
     long_description=open("README.rst").read() + "\n" +
                      open(os.path.join("docs", "HISTORY.rst")).read(),
     # Get more strings from
