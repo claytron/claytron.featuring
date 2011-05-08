@@ -34,7 +34,9 @@ def main():
     description = """\
 This script will allow you to modify the tracks in your iTunes database.
 Select the items that you want to modify in iTunes, then run this
-script from the command line using the options below.
+script from the command line using the options below. The "featuring"
+strings will be normalized and added to the comment tag as (Featuring
+Some Artist). The previous contents of the comment will be left intact.
 """
     parser = OptionParser(version=version, description=description)
     # always default to a 'dry run'
