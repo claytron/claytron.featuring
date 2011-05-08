@@ -113,7 +113,7 @@ def main():
         track_dict['orig_comment'] = track_comment.encode('utf-8')
         artist_name = track.artist()
         track_dict['Artist'] = track.artist().encode('utf-8')
-        track_dict['Album'] = artist_name.encode('utf-8')
+        track_dict['Album'] = track.album().encode('utf-8')
         ft_track = re.search(feat, track_name)
         ft_artist = re.search(feat, artist_name)
         # if (Featuring) in artist or track name
